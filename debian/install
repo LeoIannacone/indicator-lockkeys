@@ -1,0 +1,5 @@
+icons/light/* /usr/share/icons/ubuntu-mono-light/status/22/
+icons/dark/* /usr/share/icons/ubuntu-mono-dark/status/22/
+icons/dark/* /usr/share/icons/hicolor/22x22/status/
+indicator-lockkeys.desktop /etc/xdg/autostart/
+indicator-lockkeys /usr/bin/

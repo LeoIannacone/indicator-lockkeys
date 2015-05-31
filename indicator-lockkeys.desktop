@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Lock Keys Indicator
+Comment=An indicator for Caps Lock and Num Lock
+Exec=indicator-lockkeys
+Type=Application
+Icon=capslock-enabled-symbolic
+OnlyShowIn=Unity

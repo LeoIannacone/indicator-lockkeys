@@ -1,0 +1,20 @@
+Source: indicator-lockkeys
+Section: x11
+Priority: optional
+Maintainer: Leo Iannacone <l3on@ubuntu.com>
+Build-Depends: debhelper (>= 8)
+ , valac
+ , libgtk-3-dev
+ , libappindicator3-dev
+ , libcaribou-dev
+ , libgtk-3-bin
+Standards-Version: 3.9.6
+Homepage: https://github.com/LeoIannacone/indicator-lockkeys
+
+Package: indicator-lockkeys
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: another indicator for Lock Keys
+ Yet another Indicator for Lock Keys, with better
+ icons and the capability to enable and disable Caps Lock
+ and Num Lock directly from the Graphical User Interface.
