@@ -23,40 +23,41 @@ build_icons:
 	for i in *svg ; do sed s/dfdbd2/3c3c3c/g $$i > light/$$i ; done
 
 update_icon_cache:
-	update-icon-caches /usr/share/icons/hicolor
-	update-icon-caches /usr/share/icons/ubuntu-mono-light
-	update-icon-caches /usr/share/icons/ubuntu-mono-dark
+	update-icon-caches $(DESTDIR)/usr/share/icons/hicolor
+	update-icon-caches $(DESTDIR)/usr/share/icons/ubuntu-mono-light
+	update-icon-caches $(DESTDIR)/usr/share/icons/ubuntu-mono-dark
 
 install_icons:
-	mkdir -p /usr/share/icons/ubuntu-mono-dark/status/22/
-	mkdir -p /usr/share/icons/ubuntu-mono-light/status/22/
-	mkdir -p /usr/share/icons/hicolor/22x22/status
+	mkdir -p $(DESTDIR)/usr/share/icons/ubuntu-mono-dark/status/22/
+	mkdir -p $(DESTDIR)/usr/share/icons/ubuntu-mono-light/status/22/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/22x22/status
 
 	cd icons ; \
-	cp -r dark/* /usr/share/icons/ubuntu-mono-dark/status/22/ ; \
-	cp -r light/* /usr/share/icons/ubuntu-mono-light/status/22/ ; \
-	cp -r dark/* /usr/share/icons/hicolor/22x22/status
+	cp -r dark/* $(DESTDIR)/usr/share/icons/ubuntu-mono-dark/status/22/ ; \
+	cp -r light/* $(DESTDIR)/usr/share/icons/ubuntu-mono-light/status/22/ ; \
+	cp -r dark/* $(DESTDIR)/usr/share/icons/hicolor/22x22/status/
 
 uninstall_icons:
 	cd icons ; for i in *svg ; do \
-		rm -f /usr/share/icons/ubuntu-mono-light/status/22/$$i ; \
-		rm -f /usr/share/icons/ubuntu-mono-dark/status/22/$$i ; \
-		rm -f /usr/share/icons/hicolor/22x22/status/$$i ; \
+		rm -f $(DESTDIR)/usr/share/icons/ubuntu-mono-light/status/22/$$i ; \
+		rm -f $(DESTDIR)/usr/share/icons/ubuntu-mono-dark/status/22/$$i ; \
+		rm -f $(DESTDIR)/usr/share/icons/hicolor/22x22/status/$$i ; \
 	done
 
 install_bin:
-	cp indicator-lockkeys /usr/bin
+	mkdir -p $(DESTDIR)/usr/bin/
+	cp indicator-lockkeys $(DESTDIR)/usr/bin/
 
 uninstall_bin:
-	rm -f /usr/bin/indicator-lockkeys
+	rm -f $(DESTDIR)/usr/bin/indicator-lockkeys
 
 
 install_desktop:
-	mkdir -p /etc/xdg/autostart/
-	cp indicator-lockkeys.desktop /etc/xdg/autostart/
+	mkdir -p $(DESTDIR)/etc/xdg/autostart/
+	cp indicator-lockkeys.desktop $(DESTDIR)/etc/xdg/autostart/
 
 uninstall_desktop:
-	rm -f /etc/xdg/autostart/indicator-lockkeys.desktop
+	rm -f $(DESTDIR)/etc/xdg/autostart/indicator-lockkeys.desktop
 
 .DEFAULT_TARGET: all
 .PHONY: *
