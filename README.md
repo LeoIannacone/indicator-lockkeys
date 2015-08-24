@@ -7,7 +7,7 @@ directly from the **Graphical User Interface**.
 
 ## Installation via ppa
 
-Use the following ppa:
+Use the following ppa (***only Ubuntu >= 15.04 is supported***):
 ```
 sudo add-apt-repository ppa:l3on/indicator-lockkeys
 sudo apt-get update
