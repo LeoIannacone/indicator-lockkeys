@@ -1,4 +1,11 @@
-indicator-lockkeys (0.0.0) vivid; urgency=low
+indicator-lockkeys (0.0.1~vivid) vivid; urgency=medium
+
+  * Fix FTBFS in Makefile. Thanks to Andrew (hotice)
+    (PR: #1)
+
+ -- Leo Iannacone <l3on@ubuntu.com>  Mon, 24 Aug 2015 12:27:50 +0200
+
+indicator-lockkeys (0.0.0-0~utopic) utopic; urgency=low
 
   * Initial release.
 
